@@ -1,3 +1,8 @@
+/*
+Name: App.js
+Date of creation: 10/14/2023 10:43 PM CST
+Description: JS(react) for root domain.
+*/
 import logo from './logo.svg';
 import './App.css';
 
