@@ -21,11 +21,17 @@ async function upload() {
     formData.append('name', name)
 
     fetch("https://api.math-rad.com/uploadv1", {
-      "method": 'post',
-      'body': formData
-    }).then(response => {
-      console.log(response.text)
+      method: 'post',
+      body: formData,
+      mode: 'cors'
     })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Access the response data here
+      })
+      .catch(error => {
+        console.error(error); // Handle any errors
+      });
 
 
   }
@@ -33,6 +39,29 @@ async function upload() {
   input.click();
 
 }
+
+function download() {
+  const formData = new FormData();
+  formData.append("name", "doc");
+
+  fetch("https://api.math-rad.com/downloadv1", {
+    method: 'POST',
+    body: formData,
+  })
+    .then(response => response.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = "doc";
+      link.click();
+    })
+    .catch(error => {
+      console.error(error); // Handle any errors
+    });
+}
+console.log('lastest')
+
 
 function App() {
   return (
@@ -43,6 +72,7 @@ function App() {
             <h1>math.rad</h1>
 
             <button onClick={upload}>upload file</button>
+            <button onClick={download}>download doc</button>
             <body className="alter" >
               <p>
                 Hello! You've reached my website! Unfortunately, it is currently under development and I do not know when I will finish it. I do have plans and dreams for it, so one day it will be in use. I just wanted to "grab" this domain since I liked it.
