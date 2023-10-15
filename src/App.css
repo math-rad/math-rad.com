@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'oxygen';
+  src: url('media/fonts/oxygen/Oxygen-Regular.ttf')
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.alter {
+  text-align: left;
+  text-indent: 50px; 
+  font-family: 'oxygen';
 }
