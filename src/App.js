@@ -11,7 +11,7 @@ async function upload() {
   var input = document.createElement('input');
   var file
   input.type = 'file';
-  input.accept = ".txt"
+  
   input.onchange = e => {
     file = e.target.files[0]
     input.remove()
@@ -23,7 +23,6 @@ async function upload() {
     fetch("https://api.math-rad.com/uploadv1", {
       method: 'post',
       body: formData,
-      mode: 'cors'
     })
       .then(response => response.text())
       .then(data => {
@@ -40,20 +39,21 @@ async function upload() {
 
 }
 
-function download() {
+ function download() {
+  const name = prompt("What file do you want to download?");
   const formData = new FormData();
-  formData.append("name", "doc");
+  formData.append("name", name);
 
   fetch("https://api.math-rad.com/downloadv1", {
     method: 'POST',
     body: formData,
   })
-    .then(response => response.blob())
+    .then(response => response.blob() )
     .then(blob => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = "doc";
+      link.download = name;
       link.click();
     })
     .catch(error => {
@@ -72,7 +72,7 @@ function App() {
             <h1>math.rad</h1>
 
             <button onClick={upload}>upload file</button>
-            <button onClick={download}>download doc</button>
+            <button onClick={download}>download file</button>
             <body className="alter" >
               <p>
                 Hello! You've reached my website! Unfortunately, it is currently under development and I do not know when I will finish it. I do have plans and dreams for it, so one day it will be in use. I just wanted to "grab" this domain since I liked it.
