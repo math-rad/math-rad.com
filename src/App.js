@@ -8,6 +8,7 @@ import './App.css';
 
 
 function App(req) {
+  fetch("https://api.math-rad.com/start")
   return (
     <html>
       <div className="App">
