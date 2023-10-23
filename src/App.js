@@ -8,7 +8,6 @@ import './App.css';
 
 
 function App(req) {
-  const path = window.location.
   return (
     <html>
       <div className="App">
@@ -31,6 +30,9 @@ function App(req) {
             </body>
 
           </body>
+          <p>
+            v2
+          </p>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
       </div>
