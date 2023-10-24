@@ -42,12 +42,12 @@ function App(req) {
             <p>upload file</p>
             <input type="text" id="upload_name" placeholder="name assisoated with file" />
             <input type="file" id="upload_file" />
-            <input id="upload_button" onClick={button_upload()}>upload</input>
+            <input id="upload_button" onClick={button_upload}>upload</input>
           </div>
           <div>
             <p>download file</p>
             <input type="text" id="download_name" placeholder="name assisoated with file" />
-            <button id="download_button" onClick={button_download()}>download</button>
+            <button id="download_button" onClick={button_download}>download</button>
           </div>
           <p>
             v2
