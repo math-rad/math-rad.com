@@ -31,6 +31,16 @@ function App(req) {
             </body>
 
           </body>
+          <div>
+            <p>upload file</p>
+            <input type="text" id="upload_name" placeholder="name assisoated with file" />
+            <input type="file" id="upload_file" />
+          </div>
+          <div>
+            <p>download file</p>
+            <input type="text" id="download_name" placeholder="name assisoated with file" />
+            <button id="download_button">download</button>
+          </div>
           <p>
             v2
           </p>
