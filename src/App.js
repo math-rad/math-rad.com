@@ -6,16 +6,16 @@ Description: JS(react) for root domain.
 import logo from './logo.svg';
 import './App.css';
 
-function button_upload() {
-  alert("I don't know how to upload yet lol")
-}
-
-function button_download() {
-  alert("I don't know how to download yet lol")
-}
-
 function App(req) {
   fetch("https://api.math-rad.com/start")
+  function button_upload() {
+    alert("I don't know how to upload yet lol")
+  }
+  
+  function button_download() {
+    alert("I don't know how to download yet lol")
+  }
+  
   return (
     <html>
       <div className="App">
