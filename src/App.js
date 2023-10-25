@@ -48,13 +48,14 @@ function App(req) {
         <div>
             <p>upload file</p>
             <input type="text" id="upload_name" placeholder="name assisoated with file" />
-            <input type="file" id="upload_file" />
+            <input type="file" id="upload_file"/>
+            <button>upload</button>
            
           </div>
           <div>
             <p>download file</p>
             <input type="text" id="download_name" placeholder="name assisoated with file" />
-            
+            <button>download</button>
           </div>
       </div>
     </html>
