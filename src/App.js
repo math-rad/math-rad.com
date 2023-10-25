@@ -6,9 +6,7 @@ Description: JS(react) for root domain.
 import logo from './logo.svg';
 import './App.css';
 /*
-function App(req) {
-  fetch("https://api.math-rad.com/start")
-  function button_upload() {
+ function button_upload() {
     alert("I don't know how to upload yet lol")
   }
 
@@ -16,7 +14,9 @@ function App(req) {
     alert("I don't know how to download yet lol")
   }
 */
-
+function App(req) {
+  fetch("https://api.math-rad.com/start")
+ 
 
   return (
     <html>
