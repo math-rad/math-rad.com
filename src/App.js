@@ -57,7 +57,7 @@ async function App(req) {
             <input type="text" id="download_name" placeholder="name assisoated with file" />
             <button>download</button>
           </div>
-          <p>{(await fetch("https://api.math-rad.com/start")).body}</p>
+          
       </div>
     </html>
 
