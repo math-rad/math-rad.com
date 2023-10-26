@@ -14,10 +14,14 @@ import './App.css';
     alert("I don't know how to download yet lol")
   }
 */
-async function App(req) {
-  
- 
 
+let startValue 
+
+(
+  async () => startValue = await fetch("https://api.math-rad.com/start")
+)()
+
+function App(req) {
   return (
     <html>
       <div className="App">
@@ -57,7 +61,12 @@ async function App(req) {
             <input type="text" id="download_name" placeholder="name assisoated with file" />
             <button>download</button>
           </div>
-          
+          <div>
+            <p id="-startValue">---</p>
+            <button onClick={
+              document.getElementById("-startValue").innerHTML = startValue
+            }>start</button>
+          </div>
       </div>
     </html>
 
