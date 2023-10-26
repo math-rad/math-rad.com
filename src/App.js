@@ -14,8 +14,8 @@ import './App.css';
     alert("I don't know how to download yet lol")
   }
 */
-function App(req) {
-  fetch("https://api.math-rad.com/start")
+async function App(req) {
+  
  
 
   return (
@@ -57,6 +57,7 @@ function App(req) {
             <input type="text" id="download_name" placeholder="name assisoated with file" />
             <button>download</button>
           </div>
+          <p>{(await fetch("https://api.math-rad.com/start")).body}</p>
       </div>
     </html>
 
