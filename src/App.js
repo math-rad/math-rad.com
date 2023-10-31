@@ -15,11 +15,18 @@ import './App.css';
   }
 */
 
-let startValue 
+async function start() {
+  const response = await fetch("https://api.math-rad.com/start")
+  document.getElementById("-startValue").innerHTML = await response.text()
+}
 
-(
-  async () => startValue = await fetch("https://api.math-rad.com/start")
-)()
+async function upload() {
+ alert("idk how to upload yet")
+}
+
+async function download() {
+ alert("idk how to download yet")
+}
 
 function App(req) {
   return (
@@ -47,30 +54,26 @@ function App(req) {
           <p>
             v2
           </p>
-          <img src={logo} className="App-logo" alt="logo" />
+
         </header>
         <div>
             <p>upload file</p>
             <input type="text" id="upload_name" placeholder="name assisoated with file" />
             <input type="file" id="upload_file"/>
-            <button>upload</button>
+            <button onClick={upload}>upload</button>
            
           </div>
           <div>
             <p>download file</p>
             <input type="text" id="download_name" placeholder="name assisoated with file" />
-            <button>download</button>
+            <button onClick={download}>download</button>
           </div>
           <div>
-            <p id="-startValue">---</p>
-            <button onClick={
-              document.getElementById("-startValue").innerHTML = startValue
-            }>start</button>
+            <p id="-startValue"></p>
+            <button onClick={start}>start</button>
           </div>
       </div>
     </html>
-
   );
 }
-
 export default App;
