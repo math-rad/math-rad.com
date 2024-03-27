@@ -17,6 +17,6 @@
     "invalidfile": {
         "content": "file does not exist",
         "code": 404,
-        "suggestion": "Do you have the correct index?"
+        "suggestion": "Do you have the correct filename?"
     }
 }
