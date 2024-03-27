@@ -2,6 +2,7 @@ const express = require("express");
 const ports = require("../ports.json")
 const errorStrings = require("./errorStrings.json")
 const UUID = require("uuid");
+const querystring = require("querystring")
 
 const version = "v2.0";
 
@@ -78,7 +79,7 @@ API.get("/discord", (request, response) => {
             <head>
                 <meta property="og:title" content="${query.title}">
                 <meta property="og:description" content="${query.description}">
-                <meta property="og:image content="${(query.using == "index" && encodeURIComponent("cdn.math-rad.com%2Findex%2F" + query.image)) || (query.using == "file" && encodeURIComponent("cdn.math-rad.com/file/" + query.image))}">
+                <meta property="og:image content="${(query.image && (query.using == "index" && querystring.stringify({query: "cdn.math-rad.com/index/" + query.image}) || (query.using == "file" && querystring.stringify({query: "cdn.math-rad.com/file/" + query.image}))))}">
             </head>
         </html>
         `
