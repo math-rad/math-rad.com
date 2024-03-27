@@ -1,0 +1,22 @@
+{
+    "path": {
+        "content": "invalid path provided",
+        "code": 404,
+        "suggestion": "/index and /file are the only valid paths"
+    },
+    "invaliderror": {
+        "content": "invalid error",
+        "code": 404,
+        "suggestion": "lol how did you get here"
+    },
+    "badindex": {
+        "content": "invalid index for file provided",
+        "code": 404,
+        "suggestion": "Do you have the correct index?"
+    },
+    "invalidfile": {
+        "content": "file does not exist",
+        "code": 404,
+        "suggestion": "Do you have the correct index?"
+    }
+}
