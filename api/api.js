@@ -79,7 +79,6 @@ API.get("/discord", (request, response) => {
             <head>
                 <meta property="og:title" content="${query.title}">
                 <meta property="og:description" content="${query.description}">
-                <meta property="og:image content=cdn.math-rad.com%2Ffile%2Ftext.txt">
             </head>
         </html>
         `
