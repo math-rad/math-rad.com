@@ -63,3 +63,4 @@ cdn.get("/*", (request, response) => {
 })
 
 cdn.listen(ports.cdn)
+console.log("started CDN!")
