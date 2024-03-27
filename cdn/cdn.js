@@ -14,7 +14,7 @@ cdn.get("/*", (request, response) => {
     const components = request.url.substring(1).split('/')
     switch(components[0]) {
         case "file": {
-            const path = `files/${components[1]}`
+            const path = `./files/${components[1]}`
             if (!fs.existsSync(path)) {
                 response.redirect(`error?e=invalidfile&c=${components[1]}`)
                 break
