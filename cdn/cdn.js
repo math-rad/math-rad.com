@@ -37,7 +37,8 @@ cdn.get("/*", (request, response) => {
         case "error": {
             const errorIndex = request.query.e
             const errorInfo = errorStrings[errorIndex]
-            console.log(errorIndex, errorInfo)
+            console.log(errorIndex)
+            console.log(errorInfo)
             if (!errorInfo) {
                 request.redirect(`error?e=invaliderror&c=${errorIndex}`)
                 break
