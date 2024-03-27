@@ -72,7 +72,7 @@ API.get("/generate/*", (request, response) => {
 
 API.get("discord/*", (request, response) => {
     const [method, path, query] = getComponents(request)
-    console.log(query)
+    console.log(query.title)
     response.send(
         `
         <html>
