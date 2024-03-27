@@ -78,7 +78,7 @@ API.get("/discord", (request, response) => {
             <head>
                 <meta property="og:title" content="${query.title}">
                 <meta property="og:description" content="${query.description}">
-                <meta property="og:image content="${(query.using == "index" && "cdn.math-rad.com%2Findex%2F" + query.image) || (query.using == "file" && "cdn.math-rad.com%2Ffile%2F" + query.image)}">
+                <meta property="og:image content="${(query.using == "index" && encodeURIComponent("cdn.math-rad.com%2Findex%2F" + query.image)) || (query.using == "file" && encodeURIComponent("cdn.math-rad.com/file/" + query.image))}">
             </head>
         </html>
         `
