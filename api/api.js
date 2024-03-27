@@ -29,7 +29,7 @@ API.get("/stream/join", notImplemented)
 
 API.get("/version", (_, response) => response.send(version))
 
-API.get("debug/*", (request, response) => {
+API.get("/debug/*", (request, response) => {
     const [method, path, query] = getComponents(request)
     switch(method) {
         case "ip": {
