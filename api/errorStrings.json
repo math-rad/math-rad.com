@@ -1,0 +1,6 @@
+{
+    "uuidbadversion": {
+        "content": "invalid UUID version",
+        "code": 400
+    }
+}
