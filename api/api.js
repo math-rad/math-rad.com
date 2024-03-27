@@ -3,12 +3,16 @@ const ports = require("../ports.json")
 const errorStrings = require("./errorStrings.json")
 const UUID = require("uuid");
 const querystring = require("querystring")
+const fs = require("fs");
+const { trace } = require("console");
 
 const version = "v2.0";
 
 const API = express();
 
 const notImplemented = (_, response) => response.status(501).send("not implemented yet")
+
+const TEMP = {} // Place holder storage for unverified users 
 
 /**
  * 
@@ -32,7 +36,7 @@ API.get("/version", (_, response) => response.send(version))
 
 API.get("/debug/*", (request, response) => {
     const [method, path, query] = getComponents(request)
-    switch(path.shift()) {
+    switch (path.shift()) {
         case "ip": {
             response.send(`<p>${request.ip}</p><p>${request.ips}</p>`)
             break
@@ -43,27 +47,27 @@ API.get("/debug/*", (request, response) => {
 API.get("/generate/*", (request, response) => {
     const [method, path, query] = getComponents(request)
 
-    switch(path.shift()) {
+    switch (path.shift()) {
         case "string": {
-            switch(path.shift()) {
+            switch (path.shift()) {
                 case "UUID": {
-                   const version = query.v
-                   const quantity = query.quantity || 1
-                   const gen = UUID[version];
-                   const UUIDs = [];
-                   if (!gen) {
-                    const errorInfo = errorStrings["uuidbadversion"];
-                    response.status(errorInfo.code).send(errorInfo.content)
-                   }
-                   for (let i = 0; i++ < quantity;) {
-                    try {
-                        UUIDs.push(gen())
-                    } catch (err) {
-                        response.status(500).send("failed to generate uuid " + err)
+                    const version = query.v
+                    const quantity = query.quantity || 1
+                    const gen = UUID[version];
+                    const UUIDs = [];
+                    if (!gen) {
+                        const errorInfo = errorStrings["uuidbadversion"];
+                        response.status(errorInfo.code).send(errorInfo.content)
                     }
-                   }
-                   response.send(JSON.stringify(UUIDs))
-                   break
+                    for (let i = 0; i++ < quantity;) {
+                        try {
+                            UUIDs.push(gen())
+                        } catch (err) {
+                            response.status(500).send("failed to generate uuid " + err)
+                        }
+                    }
+                    response.send(JSON.stringify(UUIDs))
+                    break
                 }
             }
             break
@@ -83,6 +87,73 @@ API.get("/discord", (request, response) => {
         </html>
         `
     )
+})
+
+API.post("/user/*", (request, response) => {
+    const components = request.path.split('/')
+    components.shift();
+
+    const method = components.shift();
+
+    const body = request.body
+    const headers = request.headers
+    const query = request.query
+
+    const username = body.username
+    const password = body.password
+    const traceIP = request.ip;
+
+    switch (method) {
+
+
+        case "signup": {
+            const authToken = UUID.v4()
+
+            fs.writeFileSync(`${__dirname}/storage/tokens/${authToken}.txt`, username)
+            fs.writeFileSync(`${__dirname}/storage/users/${username}.json`, JSON.stringify({
+                "username": password,
+                "ip": traceIP,
+                "tokens": {
+                    authToken: true
+                }
+            }))
+
+            response.send({
+                "auth-token": authToken
+            })
+        }
+
+        case "login": {
+            const password = 
+        }
+
+        case "logout": {
+            try {
+                const authToken = headers.token;
+                const tokenPath = `${__dirname}/storage/tokens/${authToken}.txt`
+                const user = fs.readFileSync(tokenPath)
+                fs.unlink(tokenPath)
+                if (user) {
+                    const userpath = `${__dirname}/storage/users/${user}`
+                    const userInfo = fs.readFileSync(userpath, {
+                        "encoding": "utf8",
+                        "flag": "r"
+                    })
+                    if (userInfo) {
+                        const parsedUserInfo = JSON.parse(userInfo)
+                        parsedUserInfo.tokens[authToken] = null
+                        fs.writeFile(userpath, JSON.stringify(parsedUserInfo))
+                    }
+                }
+            }
+            
+           
+        }
+
+        case "auth": {
+            const token = query.token;
+        }
+    }
 })
 
 API.listen(ports.api);
