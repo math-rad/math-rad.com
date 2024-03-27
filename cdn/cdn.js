@@ -1,5 +1,5 @@
 const express = require("express");
-const fs = require("node:fs")
+const fs = require("fs")
 const errorStrings = require("./errorStrings.json")
 const ports = require("../ports.json")
 const cdn = express()
