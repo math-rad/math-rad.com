@@ -2,7 +2,7 @@
 
 # 3/27/2024 12:51AM; universal tunnel script as an alternative to port forwarding
 
-subdomain = ${$(pwd)##*/}
+subdomain = ${PWD##*/}
 
 local_port=$(jq ".$subdomain" ../ports.json)
 domain_port = jq ".domainport" ../ports.json
