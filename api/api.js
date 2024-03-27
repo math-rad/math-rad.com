@@ -33,7 +33,7 @@ API.get("/debug/*", (request, response) => {
     const [method, path, query] = getComponents(request)
     switch(path.shift()) {
         case "ip": {
-            response.send(request.ip)
+            response.send(`<p>${request.ip}</p><p>${request.ips}</p>`)
             break
         }
     }
