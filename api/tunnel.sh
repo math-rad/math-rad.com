@@ -4,10 +4,10 @@
 
 subdomain = ${$(pwd)##*/}
 
-local_port = $(jq ".$subdomain" ../ports.json)
+local_port=$(jq ".$subdomain" ../ports.json)
 domain_port = jq ".domainport" ../ports.json
 host = jq ".localhost" ../ports.json
-proxy = jq ".proxy" ../ports.json
+proxy=$(jq ".proxy" ../ports.json)
 
 domain = "$subdomain.math-rad.com" 
 
