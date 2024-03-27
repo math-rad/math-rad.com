@@ -11,4 +11,4 @@ proxy=$(jq ".proxy" ../ports.json)
 
 domain = "$subdomain.math-rad.com" 
 
-$(ssh $domain:$domain_port:$host.$local_port $proxy)
+$(ssh $domain:$domain_port:$host:$local_port $proxy)
