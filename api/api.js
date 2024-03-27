@@ -31,6 +31,7 @@ API.get("/version", (_, response) => response.send(version))
 
 API.get("/debug/*", (request, response) => {
     const [method, path, query] = getComponents(request)
+    console.log(method)
     switch(method) {
         case "ip": {
             response.send(request.ip)
