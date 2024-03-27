@@ -72,13 +72,13 @@ API.get("/generate/*", (request, response) => {
 
 API.get("/discord", (request, response) => {
     const [method, path, query] = getComponents(request)
-    console.log(query.title)
     response.send(
         `
         <html>
             <head>
                 <meta property="og:title" content="${query.title}">
                 <meta property="og:description" content="${query.description}">
+                <meta property="og:image content="${query.image}">
             </head>
         </html>
         `
