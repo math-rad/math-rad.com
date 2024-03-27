@@ -30,7 +30,9 @@ cdn.get("/*", (request, response) => {
                 break
             }
             const fileInfo = require(path)
-            response.sendFile(fileInfo.path)
+            response.sendFile(fileInfo.path, {
+                "root": `${__dirname}/files/`
+            })
             break
         }
 
