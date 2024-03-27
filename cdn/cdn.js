@@ -24,7 +24,7 @@ cdn.get("/*", (request, response) => {
 
         case "index": {
             const index = components[1]
-            const path = `indexes/${index}.json`
+            const path = `./indexes/${index}.json`
             if (!fs.existsSync(path)) {
                 response.redirect(`error?e=badindex&c=${index}`)
                 break
