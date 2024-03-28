@@ -25,4 +25,6 @@ stream.get("/*", (request, response) => {
 })
 
 stream.listen(ports.stream)
+
 console.log("stream.math-rad.com is ready!")
+console.log(`PORT: ${ports.stream}`)

@@ -70,4 +70,6 @@ cdn.get("/*", (request, response) => {
 })
 
 cdn.listen(ports.cdn)
+
 console.log("cdn.math-rad.com is ready!")
+console.log(`PORT: ${ports.cdn}`)
