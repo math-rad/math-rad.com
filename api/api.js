@@ -1,14 +1,13 @@
-const express = require("express");
+const express = require("express")
+const subdomain = require("express-subdomain")
+const fs = require("fs")
+const UUID = require("uuid")
+
 const ports = require("../ports.json")
-const errorStrings = require("./errorStrings.json")
-const UUID = require("uuid");
-const querystring = require("querystring")
-const fs = require("fs");
-const { trace } = require("console");
+const API = express.Router()
+const APIApp = express()
 
 const version = "v2.0";
-
-const API = express();
 
 const notImplemented = (_, response) => response.status(501).send("not implemented yet")
 
@@ -158,7 +157,8 @@ API.post("/user/*", (request, response) => {
     }
 })
 
-API.listen(ports.api);
+APIApp.use(subdomain("api", API))
+APIApp.listen(ports.api)
 
 console.log("api.math-rad.com is ready!")
 console.log(`PORT: ${ports.api}`)

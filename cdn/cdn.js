@@ -1,8 +1,12 @@
 const express = require("express");
+const subdomain = require("express-subdomain")
 const fs = require("fs")
+
 const errorStrings = require("./errorStrings.json")
-const ports = require("../ports.json")
-const cdn = express()
+const ports = require("../ports.json");
+
+const cdn = express.Router()
+const cdnApp = express()
 
 const fileROOT = `${__dirname}/file/`
 const indexROOT = `${__dirname}/indexes/`
@@ -69,7 +73,8 @@ cdn.get("/*", (request, response) => {
     }
 })
 
-cdn.listen(ports.cdn)
+cdnApp.use(subdomain("cdn", cdn))
+cdnApp.listen(ports.cdn)
 
 console.log("cdn.math-rad.com is ready!")
 console.log(`PORT: ${ports.cdn}`)

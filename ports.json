@@ -1,9 +1,6 @@
 {
-    "root": 80,
-    "api": 10112,
-    "cdn": 10113,
-    "stream": 10114,
-    "domainport": 80,
-    "localhost": "localhost",
-    "proxy": "serveo.net"
+    "root": 10111,
+    "api": 10111,
+    "cdn": 10111,
+    "stream": 10111
 }
