@@ -4,6 +4,8 @@ const API = express()
 
 // 3/26/2024 11:13 PM; yeah I attempted to bring my old code from cloudflare on to here, but it's tedious and late and I don't feel like revamping. luckikly there isn't too much functionality yet.
 
+// 3/29/2024 4:52PM; THIS WILL FAIL. This is meant to be an archive of the cloudflare version of my API with a worker. 
+
 var API_VERSION = "v3";
 var URLS = {
   "Access-Control-Allow-Origin": "https://math-rad.com",

@@ -1,5 +1,6 @@
 {
-    "root": 10111,
+    "root": 0,
+    "subdomain": 10111,
     "api": 10111,
     "cdn": 10111,
     "stream": 10111

@@ -1,18 +1,18 @@
 {
-  "name": "api",
+  "name": "subdomain",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "subdomain.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "express-subdomain": "^1.0.6",
+    "fs": "^0.0.1-security",
     "uuid": "^9.0.1"
   }
 }
