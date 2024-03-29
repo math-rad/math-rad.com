@@ -262,19 +262,25 @@ async function init_stream() {
 
 }
 
-await init_API();
-console.log("started api.math-rad.com")
+async function main() {
+   await init_API();
+   console.log("started api.math-rad.com");
 
-await init_CDN();
-console.log("started cdn.math-rad.com")
+   await init_CDN();
+   console.log("started cdn.math-rad.com");
 
-await init_stream();
-console.log("started stream.math-rad.com")
+   await init_stream();
+   console.log("started stream.math-rad.com");
+
+   service.use(subdomain("api", API))
+   service.use(subdomain("cdn", CDN))
+   service.use(subdomain("stream", STREAM))
+   service.listen(ports.subdomain)
+
+   console.log(`Listening on port: ${ports.subdomain}`)
 
 
-service.use(subdomain("api", API))
-service.use(subdomain("cdn", CDN))
-service.use(subdomain("stream", STREAM))
-service.listen(ports.subdomain)
 
-console.log(`Listening on port: ${ports.subdomain}`)
+   console.log("subdomain server is ready and active!");
+}
+main();
