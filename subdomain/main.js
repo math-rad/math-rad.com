@@ -240,21 +240,21 @@ async function init_CDN() {
 async function init_stream() {
     const pagesROOT = `${__dirname}/stream/pages/`
 
-    stream.get("/", (request, response) => response.redirect("/home"))
-    stream.get("/home", (request, response) => {
+    STREAM.get("/", (request, response) => response.redirect("/home"))
+    STREAM.get("/home", (request, response) => {
         response.sendFile("home.html", {
             "root": pagesROOT
         })
     })
 
 
-    stream.get("/watch", (request, response) => {
+    STREAM.get("/watch", (request, response) => {
         response.sendFile("watch.html", {
             "root": pagesROOT
         })
     })
 
-    stream.get("/*", (request, response) => {
+    STREAM.get("/*", (request, response) => {
         response.sendFile("unknown.html", {
             "root": pagesROOT
         })
