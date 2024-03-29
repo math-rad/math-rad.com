@@ -180,7 +180,7 @@ async function init_CDN() {
         fs.writeFileSync("file-index.json", stringify(fileIndex))
     }
 
-    cdn.get("/*", (request, response) => {
+    CDN.get("/*", (request, response) => {
         const components = request.path.substring(1).split('/')
         console.log(components[0])
 
