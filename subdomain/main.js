@@ -186,7 +186,7 @@ async function init_CDN() {
 
         switch (components[0]) {
             case "file": {
-                const path = `./file/${components[1]}`
+                const path = fileROOT + components[1];
                 if (!fs.existsSync(path)) {
                     response.redirect(`/error?e=invalidfile&c=${components[1]}&url=${request.url}`)
                     break
@@ -199,7 +199,7 @@ async function init_CDN() {
 
             case "index": {
                 const index = components[1]
-                const path = `./indexes/${index}.json`
+                const path = `${indexROOT}${index}.json`
                 if (!fs.existsSync(path)) {
                     response.redirect(`/error?e=badindex&c=${index}&url=${request.url}`)
                     break
