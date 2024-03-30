@@ -200,6 +200,7 @@ async function init_CDN() {
             case "index": {
                 const index = components[1]
                 const path = `${indexROOT}${index}.json`
+                console.log(path)
                 if (!fs.existsSync(path)) {
                     response.redirect(`/error?e=badindex&c=${index}&url=${request.url}`)
                     break
