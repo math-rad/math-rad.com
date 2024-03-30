@@ -207,7 +207,7 @@ async function init_CDN() {
                 }
                 const fileInfo = require(path)
                 response.sendFile(fileInfo.path, {
-                    "root": `${__dirname}/file/`
+                    "root": `${__dirname}/cdn/file/`
                 })
                 break
             }
