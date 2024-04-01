@@ -1,12 +1,13 @@
+const { clear } = require("console");
 const fs = require("fs");
 const UUID = require("uuid");
 
 class token {
-    constructor(tokenType) {
-        this.content = UUID.v4()
-        this.type = tokenType;
-        this.dateOfCreation = Date.now();
+    constructor(clearance, data) {
+        const tokenContent = UUID.v4();
 
-
+        this.date = Date.now();
+        this.clearance = clearance;
+        this.data = data;
     }
 }
