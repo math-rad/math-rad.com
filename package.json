@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "express-subdomain": "^1.0.6",
+    "fs": "^0.0.1-security",
+    "uuid": "^9.0.1"
+  }
+}
