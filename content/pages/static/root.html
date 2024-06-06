@@ -23,12 +23,11 @@ Date: 6/5/2024
        <p>Hello! You've found my page. I plan to make it cooler in the future, for now it remains as a simple, static webpage.</p>
        <p id="the-name"></p>
        <script>
-        alert("HI!")
-        alert("SUPER COOL RIGHT?!?!?!?")
-        document.getElementById("the-name").textContent = `what's up my bro ${prompt("WHATS UP BRO. WHATS YO NAME TELL ME")}`
-        for (const message of ["a", "b", "c", "i know you want to just see this awesome webpage already!", "lol", "guess what!!", "what?!?!", "no you're supposed to say what; i was not.", "oh", "I guess im using periods now.", "lol, I am NOT consistent with my period usage.", "period.", "so this cool webpage is using my AWESOME CDN", "come see yourself"]) {
-            alert(message)
+        function clicked() {
+            document.clear()
+            document.getElementById("the-name").textContent = `whats good my bro ${prompt("whats yo name??")}`
         }
        </script>
+       <button onclick="clicked()">click me!!</button>
     </body>
 </html>
