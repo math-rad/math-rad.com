@@ -1,5 +1,8 @@
 {
+    "__RESERVE": {
+        "file": "Cannot index direct file method"
+    },
     "font-main": "content/fonts/Oxygen/Oxygen-Regular.ttf",
     "css-main": "content/css/root.css",
-    "static-root-webpage": "pages/static/root.html"
+    "static-root-webpage": "content/pages/static/root.html"
 }
