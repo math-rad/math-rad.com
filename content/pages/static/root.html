@@ -21,5 +21,13 @@ Date: 6/5/2024
         
        <h1>math.rad</h1>
        <p>Hello! You've found my page. I plan to make it cooler in the future, for now it remains as a simple, static webpage.</p>
+       <p id="the-name"></p>
+       <script>
+        function clicked() {
+            document.clear()
+            document.getElementById("the-name").textContent = `whats good my bro ${prompt("whats yo name??")}`
+        }
+       </script>
+       <button onclick="clicked()">click me!!</button>
     </body>
 </html>
