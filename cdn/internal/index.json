@@ -4,5 +4,6 @@
     },
     "font-main": "content/fonts/Oxygen/Oxygen-Regular.ttf",
     "css-main": "content/css/root.css",
-    "static-root-webpage": "content/pages/static/root.html"
+    "static-root-webpage": "content/pages/static/root.html",
+    "favicon": "content/images/Art.ico"
 }

@@ -21,6 +21,10 @@ cdn.get("/internal/*", (request, response) => {
     }
 })
 
+cdn.get("favicon.ico", (request, response) => {
+    response.send(response.sendFile("http://cdn.math-rad.com/internal/favicon"))
+})
+
 cdn.get("/error", (request, response) => {
 
 })
