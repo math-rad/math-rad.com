@@ -1,0 +1,5 @@
+{
+    "font-main": "content/fonts/Oxygen/Oxygen-Regular.ttf",
+    "css-main": "content/css/root.css",
+    "static-root-webpage": "pages/static/root.html"
+}

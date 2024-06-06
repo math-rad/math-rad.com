@@ -1,5 +1,5 @@
 const express = require("express");
-const ports = require("../ports.json")
+const ports = require("../../ports.json")
 const API = express()
 
 // 3/26/2024 11:13 PM; yeah I attempted to bring my old code from cloudflare on to here, but it's tedious and late and I don't feel like revamping. luckikly there isn't too much functionality yet.
