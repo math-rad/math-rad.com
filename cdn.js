@@ -15,7 +15,6 @@ function serve() {
 cdn.get("/internal/*", (request, response) => {
     const index = request.path.substring(1).split('/')[1]
     const path = `${__dirname}/${internalIndex[index]}`
-A
     if (fs.existsSync(path)) {
         response.sendFile(path)
         console.log(path)
