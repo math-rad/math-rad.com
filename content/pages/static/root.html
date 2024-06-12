@@ -1,49 +1,60 @@
 <!--[
 File: content/pages/static/root.html
 Description: HTML file for main webpage: math-rad.com. 
-Date: 6/5/2024
+Date(Created): 6/5/2024
 ]-->
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>math.rad</title>
-        <meta name="description" content="A very radical website indeed!">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="https://cdn.math-rad.com/internal/favicon" type="image/x-icon"/>
-        <link rel="stylesheet" href="https://cdn.math-rad.com/internal/css-main">
-        
-        <link rel="stylesheet" href="https://cdn.math-rad.com/internal/highlightjs-theme">
-        <script src="https://cdn.math-rad.com/internal/highlightjs"></script>
-        <script src="https://cdn.math-rad.com/internal/highlightjs-init"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+    <title>math.rad</title>
+    <meta name="description" content="A very radical website indeed!">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://cdn.math-rad.com/internal/favicon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.math-rad.com/internal/css-main">
+
+    <link rel="stylesheet" href="https://cdn.math-rad.com/internal/highlightjs-theme">
+    <script src="https://cdn.math-rad.com/internal/highlightjs"></script>
+    <script src="https://cdn.math-rad.com/internal/highlightjs-init"></script>
+
+    <script src="https://cdn.math-rad.com/internal/root-webpage-init"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <pre>
-            <code class="language-lua">
-                local variable = "something"
-                function func(t) 
-                    return #t
-                end
-
-                print(func{1, 2})
-            </code>
-        </pre>
-        
-       <h1>math.rad</h1>
-       <p>Hello! You've found my page. I plan to make it cooler in the future, for now it remains as a simple, static webpage.</p>
-       <p id="the-name"></p>
-       <script>
+    <h1>math.rad</h1>
+    <p>Hello! You've found my page. I plan to make it cooler in the future, for now it remains as a simple, static
+        webpage.</p>
+    <p id="the-name"></p>
+    <script>
         function clicked() {
             document.clear()
             document.getElementById("the-name").textContent = `whats good my bro ${prompt("whats yo name??")}`
         }
-       </script>
-       <button onclick="clicked()">click me!!</button>
-    </body>
+    </script>
+    <button onclick="clicked()">click me!!</button>
+</body>
+<div>
+    <h1>portfolio</h1>
+    <sub>Some of the projects I've done over the years</sub>
+    <section>
+        <h2>Lua class implementation</h2>
+        <sub>A class implementation for lua with some beautiful syntax sugar</sub>
+        <span><code id="LCI-example"></code></span>
+        <script>
+            codeblockLangSourceToElement("https://cdn.math-rad.com/internal/portfolio-LCI-example", "lua", "LCI-example")
+        </script>
+        <p>expected output</p>
+        <code id="LCI-output"></code>
+        <script>
+            codeblockSourceToElement("https://cdn.math-rad.com/internal/portfolio-LCI-output", "LCI-output")
+        </script>
+    </section>
+</div>
+
 </html>

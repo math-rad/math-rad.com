@@ -13,6 +13,19 @@ h1 {
     font-family: main;
 }
 
+h2 {
+    font-family: main;
+}
+
+sub {
+    font-family: main;
+}
+
 p {
     font-family: main;
 }
+
+code {
+    display: block;
+    white-space: pre-wrap   
+  }

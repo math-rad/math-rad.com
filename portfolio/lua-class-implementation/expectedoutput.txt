@@ -1,0 +1,9 @@
+3 
+
+▼  {
+  ["constructor"] = "function",
+  ["foo"] = "function",
+  ["hello"] = "world",
+  ["n"] = 3,
+  ["super"] = "function"
+} 
