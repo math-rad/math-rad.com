@@ -6,5 +6,9 @@
     "css-main": "content/css/root.css",
     "static-root-webpage": "content/pages/static/root.html",
     "static-root-page-script": "content/scripts/root.js",
-    "favicon": "content/images/Art.ico"
+    "favicon": "content/images/Art.ico",
+    "highlightjs-highlight": "content/packages/highlight-js/build/highlight.js",
+    "highlightjs": "content/packages/highlight-js/build/highlight.min.js",
+    "highlightjs-theme": "content/packages/highlight-js/build/styles/default.min.css",
+    "highlightjs-init": "content/scripts/highlightjs-init.js"
 }

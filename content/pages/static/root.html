@@ -14,12 +14,26 @@ Date: 6/5/2024
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="https://cdn.math-rad.com/internal/favicon" type="image/x-icon"/>
         <link rel="stylesheet" href="https://cdn.math-rad.com/internal/css-main">
-        <link rel="script" href="https://cdn.math-rad.com/internal/static-root-page-script"/>
+        
+        <link rel="stylesheet" href="https://cdn.math-rad.com/internal/highlightjs-theme">
+        <script src="https://cdn.math-rad.com/internal/highlightjs"></script>
+        <script src="https://cdn.math-rad.com/internal/highlightjs-init"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        <pre>
+            <code class="language-lua">
+                local variable = "something"
+                function func(t) 
+                    return #t
+                end
+
+                print(func{1, 2})
+            </code>
+        </pre>
         
        <h1>math.rad</h1>
        <p>Hello! You've found my page. I plan to make it cooler in the future, for now it remains as a simple, static webpage.</p>
