@@ -1,5 +1,11 @@
 {
     "errors": {
         "invalid-path": "invalid path"
+    },
+    "CORS": {
+        "policy": {
+            "origin": "https://math-rad.com",
+            "optionsSuccessStatus": 200
+        }
     }
 }
