@@ -12,5 +12,6 @@
     "highlightjs-theme": "content/packages/highlight-js/build/styles/default.min.css",
     "highlightjs-init": "content/scripts/highlightjs-init.js",
     "portfolio-LCI-example": "portfolio/lua-class-implementation/example.lua",
-    "portfolio-LCI-output": "portfolio/lua-class-implementation/expectedoutput.txt"
+    "portfolio-LCI-output": "portfolio/lua-class-implementation/expectedoutput.txt",
+    "mc-icon": "content/images/icon.png"
 }
