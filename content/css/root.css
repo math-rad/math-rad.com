@@ -1,12 +1,12 @@
 /*
 File: content/css/root.css
-Description: The CSS file for the static main webpage: math-rad.com. Utilizes CDN for various features. 
+Description: The CSS file for the static main webpage: math-rad.com. Utilizes https://files.math-rad.com for various features. 
 Created: 6/5/2024 - There have been multiple reworks of this website, dating back about ~1 years ago at this point in time.
 */
 
 @font-face {
     font-family: main;
-    src: url("https://cdn.math-rad.com/internal/font-main");
+    src: url("https://files.math-rad.com/internal/font-main");
 }
 
 h1 {

@@ -1,0 +1,19 @@
+{
+    "__RESERVE": {
+        "file": "Cannot index direct file method"
+    },
+    "font-main": "content/fonts/Oxygen/Oxygen-Regular.ttf",
+    "css-main": "content/css/root.css",
+    "static-root-webpage": "content/pages/static/root.html",
+    "root-webpage-init": "content/scripts/root.js",
+    "favicon": "content/images/Art.ico",
+    "highlightjs-highlight": "content/packages/highlight-js/build/highlight.js",
+    "highlightjs": "content/packages/highlight-js/build/highlight.min.js",
+    "highlightjs-theme": "content/packages/highlight-js/build/styles/default.min.css",
+    "highlightjs-init": "content/scripts/highlightjs-init.js",
+    "portfolio-LCI-example": "portfolio/lua-class-implementation/example.lua",
+    "portfolio-LCI-output": "portfolio/lua-class-implementation/expectedoutput.txt",
+    "mc-icon": "content/images/icon.png",
+    "insanity": "content/videos/banging-head-against-wall.mp4",
+    "bruh": "content/images/screenshots/bruh.png"
+}

@@ -4,7 +4,7 @@ const cors = require("cors")
 
 const ports = require("./ports.json")
 const configurations = require("./configurations.json")
-const internalIndex = require("./cdn/internal/index.json")
+const internalIndex = require("./files/internal/index.json")
 
 const policy = configurations.CORS.policy
 
