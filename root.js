@@ -18,12 +18,7 @@ root.get("/home", cors(policy), (request, response) => {
     response.sendFile(`${__dirname}/${internalIndex["static-root-webpage"]}`)
 })
 
-root.get("/test", cors(policy), (request, response) => {
-   response.send("hi!");
-})
-
-
-
-
 
 root.listen(ports.root)
+
+console.log(`math-rad.com is now active on port: ${ports.root}`);
